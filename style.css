@@ -1,0 +1,885 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --black: rgb(22, 21, 22);
+  --grey: rgb(35, 33, 35);
+  --red: rgb(198, 22, 61);
+  --white: rgb(238, 237, 239);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  color: var(--white);
+  background-color: var(--black);
+  font-family: "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 1.2em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: var(--black);
+}
+
+a{
+  text-decoration: none;
+  color:white;
+}
+
+.navbar.scrolling {
+  background-color: var(--red);
+  transition: all 0.3s;
+}
+
+nav .nav-link a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+nav .nav-link a.active {
+  border: 2px solid var(--white);
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+nav .logo {
+  font-size: 2rem;
+  width: 20%;
+}
+
+.nav-link {
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  font-size: 20px;
+}
+
+.ham {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+nav .ham div {
+  background-color: var(--white);
+  border-radius: 10px;
+  width: 35px;
+  height: 4px;
+}
+
+.side-bar {
+  height: 100vh;
+  width: 30%;
+  background-color: var(--red);
+  color: var(--white);
+  position: fixed;
+  right: -500px;
+  z-index: 100;
+  display: none;
+  transition: all 0.5s;
+}
+
+.side-bar .side-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+}
+
+.side-bar a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.side-bar .cross {
+  font-size: 2.5rem;
+  position: absolute;
+  right: 15px;
+}
+
+main {
+  position: relative;
+  top: 110px;
+}
+
+.intro {
+  height: 90vh;
+  padding-bottom: 60px;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  margin-inline: auto;
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.intro.visible-intro {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.intro .intro-left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: start;
+  align-items: start;
+  gap: 60px;
+  flex-direction: column;
+}
+
+.intro .intro-img {
+  width: 50%;
+  text-align: end;
+  padding-right:100px;*/
+}
+
+.intro .intro-img img {
+  width: 300px;
+  border-radius: 30px;
+}
+
+.intro .intro-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  font-size: 20px;
+  padding-left:30px;
+}
+
+.intro-left .intro-contact{
+  padding-left: 30px;
+}
+
+.intro .intro-icon div {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.intro-link:hover .fa-linkedin, .intro-link:hover a {
+        color: var(--red);
+}
+
+.intro-git:hover .fa-github, .intro-git:hover a {
+        color: var(--red);
+}
+
+.intro-email:hover .fa-envelope, .intro-email:hover a {
+        color: var(--red);
+}
+
+
+.intro .intro-contact a {
+  text-decoration: none;
+}
+
+.intro .intro-contact .intro-me {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 15px;
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.intro .intro-contact .intro-me:hover {
+  background-color: var(--white);
+  color: var(--red);
+}
+
+.intro .intro-contact .talk {
+  background-color: var(--black);
+  color: var(--white);
+  border: 3px solid var(--red);
+  padding: 12.5px;
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+
+.intro .intro-contact .talk:hover {
+  color: var(--red);
+}
+
+.intro .intro-left .intro-heading p {
+  font-size: 2.25rem;
+  margin-top: 30px;
+}
+
+.intro .intro-left .intro-heading p span {
+  color: var(--red);
+}
+
+.intro .intro-heading .typing {
+  margin-left: 30px;
+}
+
+.intro .intro-heading .typing span {
+  position: relative;
+}
+
+.intro .intro-heading .typing span::before {
+  content: "Frontend Developer";
+  color: var(--red);
+  animation: words 20s infinite;
+}
+
+.intro .intro-heading .typing span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: var(--black);
+  border-left: 2px solid var(--red);
+  right: -8px;
+  animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid var(--black);
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "Frontend Developer";
+  }
+  21%,
+  40% {
+    content: "Full Stack Developer";
+  }
+  41%,
+  60% {
+    content: "Frontend Developer";
+  }
+  61%,
+  80% {
+    content: "Full Stack Developer";
+  }
+  81%,
+  100% {
+    content: "Frontend Developer";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}
+
+/**<span>Frontend Developer</span>Full Stack Developer*/
+
+.about {
+  height: 90vh;
+  background-color: var(--grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about .about-title {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: 1s ease;
+  
+}
+
+.about .about-title.visible-about {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.about .about-title h2 {
+  font-size: 3rem;
+  border-bottom: 5px solid var(--red);
+  width: fit-content;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about .about-desc p{
+  width:75%;
+  margin-inline: auto;
+  line-height: 38px;
+  font-size: 20px;
+}
+
+.skill svg {
+  font-size: 30px;
+}
+
+.skill .img {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill .img img {
+  width: 15px;
+  height: 15px;
+}
+
+.skill {
+  width: 80%;
+  margin-inline: auto;
+  padding-bottom: 70px;
+  padding-top: 55px;
+}
+
+.skill .skill-title {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.skill .skill-title.show-skill {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.skill .title {
+  font-size: 3rem;
+  border-bottom: 5px solid var(--red);
+  width: fit-content;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.skill .desc {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.skill .skill-list {
+  display: grid;
+  grid-template-columns: repeat(6, 12%);
+  gap: 40px 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill .skill-list div {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--grey);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 5px;
+}
+
+.skill .skill-list div:hover {
+  transform: scale(1.2);
+  transition: all 0.3s;
+}
+
+.skill .skill-list .text {
+  font-size: 20px;
+}
+
+.project-section {
+  background-color: var(--white);
+  color: var(--black);
+  padding-top: 50px;
+  padding-inline: 6%;
+  padding-bottom: 50px;
+}
+
+.project .card {
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  padding: 20px;
+  width: 495px;
+  align-self: stretch;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.project .card.visible {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.project .card ul li {
+  list-style-type: disclosure-closed;
+  margin-bottom: 8px;
+}
+
+.project .card-desc {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-top: 18px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.2rem;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-bottom .card-skill {
+  width: 70%;
+}
+
+.card-bottom .card-links {
+  width: 30%;
+  text-align: end;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.project-section .project-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.project-section .project-title.show-title {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.project-section .project-title h2 {
+  font-size: 3rem;
+  border-bottom: 5px solid var(--red);
+}
+
+.project .card .card-img img {
+  width: 450px;
+  height: 250px;
+}
+
+.project .card a {
+  text-decoration: none;
+  color: var(--black);
+  margin-left: 8px;
+}
+
+.project .card a svg {
+  font-size: 1.5rem;
+}
+
+.contact {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  min-height: 90vh;
+  gap: 100px;
+}
+
+.contact-left h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  border-bottom: 5px solid var(--red);
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 30%;
+  height: 350px;
+  gap: 25px;
+  transform: translateX(40px);
+  opacity: 0;
+  transition: transform 1s ease 0.1s, opacity 1s ease 0.1s;
+}
+
+.contact-left.visible-left {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.contact-left div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.contact-left .email:hover .fa-envelope, .contact-left .email:hover a{
+  color: rgb(154, 154, 154);
+}
+
+.contact-left .phone:hover .fa-phone, .contact-left .phone:hover p{
+  color: rgb(154, 154, 154);
+}
+
+.contact-left .git:hover .fa-github, .contact-left .git:hover a{
+  color: rgb(154, 154, 154);
+}
+
+.contact-left .link:hover .fa-linkedin, .contact-left .link:hover a{
+  color: rgb(154, 154, 154);
+}
+
+
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+  transform: translateX(40px);
+  opacity: 0;
+  transition: transform 1s ease 0.5s, opacity 1s ease 0.5s;
+}
+
+.contact-right.visible-right {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-right form input,
+.contact-right form textarea {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: var(--grey);
+  border: none;
+  font-size: 20px;
+  color: var(--white);
+  outline: none;
+}
+
+.contact-right form textarea {
+  height: 100px;
+  font-size: 20px;
+}
+
+.contact-right button {
+  width: 150px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--red);
+  color: var(--white);
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.contact .message {
+  display: none;
+  color: rgb(22, 253, 22);
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.footer-flex {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-inline: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .intro {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .intro .intro-left {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .intro .intro-img {
+    width: 100%;
+    text-align: center;
+    padding-right: 0px;
+  }
+
+  .contact {
+    gap: 30px;
+  }
+
+  .contact-left {
+    width: 45%;
+    gap: 25px;
+  }
+
+  .contact-left {
+    width: 65%;
+  }
+
+  .skill .title {
+    font-size: 2.5rem;
+  }
+
+  .skill .skill-list .text {
+    font-size: 18px;
+  }
+
+  .skill .skill-list div {
+    gap: 18px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .contact-left h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact-right form input,
+  .contact-right form textarea {
+    font-size: 14px;
+  }
+
+  .skill .skill-list {
+    grid-template-columns: repeat(5, 15%);
+    gap: 40px 50px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .skill .skill-list {
+    grid-template-columns: repeat(3, 26%);
+    gap: 40px 30px;
+  }
+
+  .about{
+    height:fit-content;
+    padding-top: 50px;
+    padding-bottom:50px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav-link {
+    display: none;
+  }
+
+  .ham {
+    display: flex;
+  }
+
+  .contact {
+    flex-direction: column;
+    height: auto;
+    padding-top: 50px;
+  }
+
+  .contact-left {
+    height: 285px;
+    gap: 25px;
+  }
+
+  footer {
+    position: relative;
+    top: 100px;
+  }
+
+  .footer-flex {
+    width: 98%;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .intro .intro-left .intro-heading p {
+    font-size: 1.5rem;
+  }
+
+  .intro .intro-contact .intro-me {
+    font-weight: 100;
+    font-size: 14px;
+  }
+
+  .intro .intro-contact .talk {
+    font-weight: 100;
+    font-size: 14px;
+  }
+
+  .intro .intro-icon {
+    font-size: 14px;
+  }
+
+  .intro .intro-img img {
+    width: 212px;
+  }
+
+  .skill .skill-list {
+    grid-template-columns: repeat(2, 35%);
+    gap: 40px 42px;
+  }
+
+  .project .card {
+    width: 295px;
+  }
+
+  .project .card .card-img img {
+    width: 255px;
+    height: 160px;
+  }
+
+  .project .card-desc {
+    font-size: 16px;
+  }
+
+  .card-bottom {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .intro {
+    width: 95%;
+  }
+
+  .intro .intro-heading .typing {
+    margin-left: 2px;
+  }
+
+  .about .about-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .about .about-desc p{
+    font-size: 18px;
+  }
+
+  .project-section .project-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .skill .title {
+    font-size: 1.8rem;
+  }
+
+  .contact {
+    width: 98%;
+  }
+
+  .skill .skill-list .text {
+    font-size: 14px;
+  }
+
+  .skill .skill-list {
+    grid-template-columns: repeat(2, 38%);
+    gap: 40px 40px;
+  }
+}
